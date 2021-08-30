@@ -7,10 +7,13 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname,'build'),
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+      },
     module:{
         rules:[
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 loader: 'babel-loader',
                 include:path.resolve(__dirname,'src'),
             },
