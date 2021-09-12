@@ -1,7 +1,10 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const webPack = require('webpack');
+const webpack = require('webpack');
 module.exports = {
     mode:'development',
+    watch: true,
     entry:'./src/index.js',
     output:{
         filename: 'main.js',
@@ -50,7 +53,8 @@ module.exports = {
         new htmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html'
-        })
+        }),
+        new webpack.IgnorePlugin(/\.\/locale/,/moment/),
     ],
     devServer: {
         port: 9000,
