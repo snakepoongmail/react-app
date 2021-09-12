@@ -1,10 +1,9 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const webPack = require('webpack');
 const webpack = require('webpack');
 module.exports = {
     mode:'development',
-    watch: true,
+    // watch: true,
     entry:'./src/index.js',
     output:{
         filename: 'main.js',
@@ -50,6 +49,10 @@ module.exports = {
         ]
     },
     plugins: [
+        //动态链接库，把 react,react-dom 单独打包成 _dll_react.js的文件，manifest.json是文件清单
+        new webpack.DllReferencePlugin({
+            manifest:path.resolve(__dirname,'build','manifest.json')
+        }),
         new htmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html'
