@@ -1,0 +1,1 @@
+export const nls_string = 'nls string';

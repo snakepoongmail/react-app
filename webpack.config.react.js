@@ -8,7 +8,7 @@ module.exports = {
  },
  output:{
      filename: '_dll_[name].js',
-     path: path.resolve(__dirname,'build'),
+     path: path.resolve(__dirname,'src'),
      library: '_dll_[name]',
     //  libraryTarget:'var'
  },
@@ -16,7 +16,7 @@ module.exports = {
      //单独打包 react,react-dom，动态链接库
      new webpack.DllPlugin({
         name:'_dll_[name]',
-        path:path.resolve(__dirname,'build','manifest.json')
+        path:path.resolve(__dirname,'src','manifest.json')
      }),
  ]
 }

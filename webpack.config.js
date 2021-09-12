@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     mode:'development',
     // watch: true,
@@ -51,13 +52,18 @@ module.exports = {
     plugins: [
         //动态链接库，把 react,react-dom 单独打包成 _dll_react.js的文件，manifest.json是文件清单
         new webpack.DllReferencePlugin({
-            manifest:path.resolve(__dirname,'build','manifest.json')
+            manifest:path.resolve(__dirname,'src','manifest.json')
         }),
         new htmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html'
         }),
         new webpack.IgnorePlugin(/\.\/locale/,/moment/),
+        new CopyWebpackPlugin({
+            patterns: [
+              { from: path.resolve(__dirname, 'src','_dll_react.js'), to: path.resolve(__dirname, 'build/') },
+            ],
+          }),
     ],
     devServer: {
         port: 9000,

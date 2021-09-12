@@ -12,6 +12,6 @@
     "plugins": [
       ["@babel/plugin-transform-runtime", {
         "helpers": false
-      }]
+      },"@babel/plugin-syntax-dynamic-import"]
     ]
   }
