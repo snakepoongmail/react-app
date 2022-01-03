@@ -1,6 +1,6 @@
-import {  createStore } from "redux";
-import reducer from './reducer/index';
+import {  createStore, combineReducers } from "redux";
+import milk from './reducer/milk';
 
-const store = createStore(reducer);
+const store = createStore(combineReducers({milk}));
 
 export default store;
