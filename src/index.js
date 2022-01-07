@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/Redux'
+import App from './components/CancelFetch';
+// import App from './components/Redux'
 // import App from './App';
 // import App from './components/landing';
 // import App from './components/setState/setState'
