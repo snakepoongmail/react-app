@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import Child from './Child';
 import { reducers } from './init';
 import { createStore } from 'redux';
+import ReactRedux from "./ReactRedux";
 
 //共享
 const store = createStore(reducers);
@@ -21,6 +22,7 @@ const Parent = (props)=>{
             <button onClick={()=>setCount(count+1)}>parent</button>
             <Provider store = {store}>
                 <Child></Child>
+                <ReactRedux></ReactRedux>
             </Provider>
         </div>
     );
