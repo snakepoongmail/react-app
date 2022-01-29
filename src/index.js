@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/MemoryLeak/Closure';
+// import App from './components/MemoryLeak/Closure';
 // import App from './components/CancelFetch';
 // import App from './components/Redux'
 // import App from './App';
 // import App from './components/landing';
 // import App from './components/setState/setState'
-// import App from './components/UseContext/UseContext'
+import App from './components/UseContext/UseContext'
 // import App from './components/lazyLoading/lazyLoading'
 // import reportWebVitals from './reportWebVitals';
 // import App from './components/momentTest'
