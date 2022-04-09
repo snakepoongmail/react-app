@@ -1,11 +1,12 @@
 // worker.js
 const workercode = () => {
-
-    onmessage = function(e) {
+    /* eslint-disable-next-line no-restricted-globals */
+    self.onmessage = function(e) {
         console.log('Message received from main script');
         var workerResult = 'Received from main: ' + (e.data);
         console.log('Posting message back to main script');
-        postMessage(workerResult);
+        /* eslint-disable-next-line no-restricted-globals */
+        self.postMessage(workerResult);
     }
 };
 
