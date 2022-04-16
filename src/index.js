@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/Webworker';
+import App from './components/EventListeners';
+// import App from './components/Webworker';
 // import App from './components/MemoryLeak/Table';
 // import App from './components/MemoryLeak/Closure';
 // import App from './components/CancelFetch';
